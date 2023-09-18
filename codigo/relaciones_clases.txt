@@ -1,0 +1,49 @@
+Relaciones entre clases:
+- Herencia: Cuando tengamos clases que tienen un conocimiento en común
+perfiles de empleado: Analista, Administrador, Gerente
+
+Figuras: Cubo, Cilindro, Triangulo
+
+public
+protected
+private
+
+
+class Hija : public Padre, private Padre2 {
+
+}
+
+- Composición: Una clase se desglosa en partes (atributos).
+Cada atributo en un objeto de otra clase
+un ordenador: memoria, disco, etc..
+
+- Asociación: Cuando clases independientes interactúan en un instante.
+Coche
+SurtidorGas
+
+Coche coche;
+SurtidorGas surtidor;
+
+coche.repostar(surtidor);
+
+································
+
+Herencia: Padre, Hija
+
+Call Es un Servicio
+CallInt es un servicio
+SMS Servicio
+
+void metodo(Padre *obj);
+
+Padre *metodo();
+
+....................................
+
+
+
+
+
+
+
+
