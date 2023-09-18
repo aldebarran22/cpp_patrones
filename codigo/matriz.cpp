@@ -5,6 +5,8 @@
 
 class Matriz {
 	
+	//friend Matriz operator+(const Matriz &m, const Matriz &m2){
+	
 	int filas, cols;
 	int **datos;
 	
