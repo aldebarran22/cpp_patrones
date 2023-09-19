@@ -3,38 +3,40 @@
 #include <iostream>
 #include <stdexcept>
 
-class Matriz {
+template <class T> class Matriz {
 	
 	//friend Matriz operator+(const Matriz &m, const Matriz &m2){
 	
 	int filas, cols;
-	int **datos;
+	T **datos;
+	T val;
 	
 	public:
-		Matriz(int filas = 10, int cols = 10);
+		Matriz(T val, int filas = 10, int cols = 10);
 		//Matriz(const Matriz &);
 		//Matriz & operator=(const Matriz &);
 		void imprimir();
-		Matriz operator+(const Matriz &m);		
+		Matriz<T> operator+(const Matriz<T> &m);		
 		~Matriz();	
 };
 
 
-Matriz::Matriz(int filas, int cols){
+template <class T> Matriz<T>::Matriz(T val, int filas, int cols){
 	this->filas = filas;
 	this->cols = cols;
+	this->val = val;
 	
 	this->datos = new int *[filas];
 	for (int i = 0 ; i < filas ; i++){
 		this->datos[i] = new int[cols];
 		
 		for (int j = 0 ; j < cols ; j++){
-			this->datos[i][j] = rand() % 100;
+			this->datos[i][j] = val;
 		}
 	}
 }
 
-void Matriz::imprimir(){
+template <class T> void Matriz<T>::imprimir(){
 	for (int i = 0 ; i < filas ; i++){			
 		for (int j = 0 ; j < cols ; j++){
 			std::cout << this->datos[i][j]  << "\t";
@@ -43,12 +45,12 @@ void Matriz::imprimir(){
 	}
 }
 
-Matriz Matriz::operator+(const Matriz &m){
+template <class T> Matriz<T> Matriz<T>::operator+(const Matriz<T> &m){
 	if ((this->filas != m.filas) || (this->cols != m.cols)){
 		throw std::invalid_argument("Son matrices de distinto tamaño ...");
 	}
 	
-	Matriz aux(m.filas, m.cols);
+	Matriz aux(m.val, m.filas, m.cols);
 	for (int i = 0 ; i < m.filas ; i++){
 		for (int j = 0 ; j < m.cols ; j++){
 			aux.datos[i][j] = m.datos[i][j] + this->datos[i][j];
@@ -60,7 +62,7 @@ Matriz Matriz::operator+(const Matriz &m){
 	return aux;
 }
 
-Matriz::~Matriz(){
+template <class T>  Matriz<T>::~Matriz(){
 	for (int i = 0 ; i < filas ; i++){
 		delete [] this->datos[i];
 		this->datos[i] = nullptr;
