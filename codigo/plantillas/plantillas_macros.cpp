@@ -22,11 +22,14 @@ template <class T> void imprimir(std::vector<T> v){
 	std::cout << std::endl;
 }
 
+template <class T> T *reservar(int n){
+	return new T[n];
+}
+
 const char *menor(const char *ptr1, const char *ptr2){
 	std::cout << "Compara con punteros" << std::endl;
 	return (std::strcmp(ptr1, ptr2) < 0) ? ptr1 : ptr2;
 }
-
 
 void testMacro(){
 	std::cout << "Menor int: " << MENOR(8,4) << std::endl;
@@ -67,6 +70,15 @@ void testPlantillaMenor(){
 	
 	std::vector<int> resul = menor(v1, v2);
 	imprimir(resul);
+	
+	int *ptr = reservar<int>(10);	
+	delete [] ptr;
+	ptr = nullptr;
+	
+		
+	std::string *ptr2 = reservar<std::string>(10);	
+	delete [] ptr2;
+	ptr2 = nullptr;
 }
 
 int main(){

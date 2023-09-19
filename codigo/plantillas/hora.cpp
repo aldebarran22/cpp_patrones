@@ -78,6 +78,11 @@ bool Hora::operator>(const Hora &hora)
 	return (this->segundos() > hora.segundos());
 }
 
+bool Hora::operator<(const Hora &hora)
+{
+	return (this->segundos() < hora.segundos());
+}
+
 bool Hora::operator>=(const Hora &hora)
 {
 	return this->segundos() >= hora.segundos();

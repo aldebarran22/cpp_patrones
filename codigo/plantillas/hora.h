@@ -23,6 +23,7 @@ class Hora
 		long segundos() const;
 		Hora operator+(const Hora &);
 		bool operator>(const Hora &);
+		bool operator<(const Hora &);
 		bool operator>=(const Hora &);		
 		bool operator!();
 		Hora operator++(); 	  // Prefijo
