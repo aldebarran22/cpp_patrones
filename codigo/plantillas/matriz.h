@@ -16,6 +16,8 @@ template <class T> class Matriz {
 		//Matriz(const Matriz &);
 		//Matriz & operator=(const Matriz &);
 		void imprimir();
+		T get(int, int);
+		void set(T, int, int);
 		Matriz<T> operator+(const Matriz<T> &m);		
 		~Matriz();	
 };
@@ -26,14 +28,30 @@ template <class T> Matriz<T>::Matriz(T val, int filas, int cols){
 	this->cols = cols;
 	this->val = val;
 	
-	this->datos = new int *[filas];
+	this->datos = new T*[filas];
 	for (int i = 0 ; i < filas ; i++){
-		this->datos[i] = new int[cols];
+		this->datos[i] = new T[cols];
 		
 		for (int j = 0 ; j < cols ; j++){
 			this->datos[i][j] = val;
 		}
 	}
+}
+
+template <class T> T  Matriz<T>::get(int f, int c){
+	if (!(f >= 0 && f < this->filas) && (c >= 0 && c < this->cols)){
+		throw std::out_of_range("Coordenadas fuera de rango");
+	}
+	
+	return this->datos[f][c];
+}
+
+template <class T> void  Matriz<T>::set(T t, int f, int c){
+	if (!(f >= 0 && f < this->filas) && (c >= 0 && c < this->cols)){
+		throw std::out_of_range("Coordenadas fuera de rango");
+	}
+	
+	this->datos[f][c] = t;
 }
 
 template <class T> void Matriz<T>::imprimir(){

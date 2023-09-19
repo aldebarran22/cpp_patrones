@@ -4,8 +4,10 @@
 #include <vector>
 
 #include "hora.h"
+#include "matriz.h"
 
 #define MENOR(A,B) ((A<B)?A:B)
+
 
 template <class T> T menor(T a, T b){
 	return (a<b ? a : b);
@@ -81,7 +83,27 @@ void testPlantillaMenor(){
 	ptr2 = nullptr;
 }
 
+void testMatrices(){
+	Matriz<int> m1(1,5,5);
+	Matriz<int> m2(4,5,5);
+	
+	m1.imprimir();
+	std::cout<<std::endl;
+	m2.imprimir();
+	std::cout << std::endl;
+	
+	Matriz<int> suma = m1+m2;
+	suma.imprimir();
+	std::cout<<std::endl;
+	
+	Matriz<Hora> h1(Hora(2,30,0), 3,3);
+	Matriz<Hora> h2(Hora(2,30,0), 3,3);
+	Matriz<Hora> sumaH = h1+h2;	
+	
+	sumaH.imprimir();
+	
+}
 int main(){
-	testPlantillaMenor();
+	testMatrices();
 	return 0;
 }
