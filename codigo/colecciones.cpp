@@ -4,6 +4,38 @@
 #include <stdexcept>
 
 
+bool borrarElemento(std::vector<int> &v, int n){
+	
+	auto it = std::find(v.begin(), v.end(), n);
+	if (it == v.end()){
+		throw std::invalid_argument("No existe el elemento");
+		
+	} else {
+		v.erase(it);
+		return true;
+	}
+}
+
+void testVector2(){
+	std::vector<int> v = {1,2,3,4,3,4,2,3};
+	
+	try {
+		
+		if (borrarElemento(v, 3)){
+			std::cout << "Elemento eliminado" << std::endl;
+			for (auto i : v){
+				std::cout << i << " ";
+			}
+			std::cout << std::endl;
+		}
+			
+		
+	} catch (std::invalid_argument &e){
+		std::cerr << e.what() << std::endl;
+	}
+	
+}
+
 void testVector(){
 	std::vector<int> v = {1,2,3,4};
 	std::vector<int>::iterator it;
@@ -55,7 +87,7 @@ void testVector(){
 	std::cout << std::endl;	
 	
 	// Verificación de rango:
-	std::vector<int> v2 = {1,2,3,4,5};
+	std::vector<int> v2 = {1,5,2,0,5,3,4,5};
 	
 	try {
 		std::cout << "pos. 10 de v2: " << v2[10]  << std::endl;
@@ -75,6 +107,12 @@ void testVector(){
 		std::cout << "No existe " << std::endl;
 	}
 	
+	// Contar repeticiones:
+	int n = std::count(v2.begin()+2, v2.end()-2, 5);
+	std::cout << "El 5 se repite: " << n << std::endl;
+	
+	// Una función que borre un elemento del vector: 1ª ocurrencia!
+	
 	
 	// Aritmética de punteros:
 	int array[] = {2,3,4,5};
@@ -88,7 +126,7 @@ void testVector(){
 }
 
 int main(){
-	testVector();
+	testVector2();
 	
 	return 0;
 }
