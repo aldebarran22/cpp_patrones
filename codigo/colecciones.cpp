@@ -1,9 +1,11 @@
 #include <vector>
+#include <algorithm>
 #include <iostream>
+#include <stdexcept>
 
 
 void testVector(){
-	std::vector<int> v;
+	std::vector<int> v = {1,2,3,4};
 	std::vector<int>::iterator it;
 	std::vector<int>::reverse_iterator itr;
 	
@@ -52,13 +54,37 @@ void testVector(){
 	}
 	std::cout << std::endl;	
 	
+	// Verificación de rango:
+	std::vector<int> v2 = {1,2,3,4,5};
 	
+	try {
+		std::cout << "pos. 10 de v2: " << v2[10]  << std::endl;
+		std::cout << "pos. 10 de v2: " << v2.at(10) << std::endl;
+		
+	} catch (std::out_of_range &e){
+		std::cerr << e.what() << std::endl;
+	}
 	
+	//  Localizar un número:
+	auto ptr = std::find(v2.begin(), v2.end(), 6);
+	if (ptr != v2.end()){
+		std::cout << "Existe: " << *ptr << std::endl;
+		std::cout << "pos: " << ptr-v2.begin() << std::endl;
+		
+	} else {
+		std::cout << "No existe " << std::endl;
+	}
 	
 	
 	// Aritmética de punteros:
 	int array[] = {2,3,4,5};
 	std::cout << "El i = 2 " << *(array + 2) << std::endl;	
+	
+	int *ini = array; // ini = &array[0]
+	int *fin = array+2;
+	
+	std::cout << fin-ini << std::endl;
+	
 }
 
 int main(){
