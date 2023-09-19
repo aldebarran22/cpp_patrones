@@ -8,6 +8,9 @@
 Matriz::Matriz(std::string path){
 	char linea[1024];
 	std::string datos;
+	
+	this->f = 0;
+	this->c = 0;
 
 	std::ifstream os(path, std::ios::in);
 	if (!os){
@@ -15,14 +18,27 @@ Matriz::Matriz(std::string path){
 		return;
 	}
 
+	std::vector<int> fila;
+	
 	while (os.getline(linea, 1024)){
 		datos = linea;
 
 		std::cout << linea << std::endl;
-		
+		this->split(linea, ';', fila);
+		this->matriz.push_back(fila);
+		this->c = fila.size();
+		fila.clear();
+		this->f++;		
 	}
-
 	os.close();	
+}
+
+void Matriz::join(const std::vector<int> &fila, char delim, std::string &linea){
+		
+	for (auto numero : fila){
+		linea += std::to_string(numero) + delim;
+	}	
+	
 }
 
 void Matriz::split(const std::string &s, char delim, std::vector<int> &elems) {

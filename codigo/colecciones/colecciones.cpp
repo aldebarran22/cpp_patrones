@@ -171,8 +171,10 @@ int main(){
 	
 	Matriz m;
 	m.imprimir();
+	std::cout << std::endl;
 	
 	Matriz m2("numeros.csv");
+	m2.imprimir();
 	
 	
 	return 0;

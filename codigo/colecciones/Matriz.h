@@ -11,6 +11,7 @@ class Matriz
 	int c;
 	
 	void split(const std::string &, char, std::vector<int> &);
+	void join(const std::vector<int> &, char, std::string &);
 	
 	public:
 		Matriz(int=5, int=5);
