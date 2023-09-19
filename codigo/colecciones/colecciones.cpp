@@ -172,6 +172,8 @@ int main(){
 	Matriz m;
 	m.imprimir();
 	
+	Matriz m2("numeros.csv");
+	
 	
 	return 0;
 }

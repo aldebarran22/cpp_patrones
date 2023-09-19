@@ -2,6 +2,7 @@
 #define MATRIZ_H
 
 #include <vector>
+#include <string>
 
 class Matriz
 {
@@ -9,8 +10,11 @@ class Matriz
 	int f;
 	int c;
 	
+	void split(const std::string &, char, std::vector<int> &);
+	
 	public:
 		Matriz(int=5, int=5);
+		Matriz(std::string);
 		void imprimir();
 		~Matriz();
 	protected:
