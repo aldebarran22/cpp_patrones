@@ -2,8 +2,12 @@
 #include <algorithm>
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib>
+#include <ctime>
 
 #include "hora.h"
+#include "Matriz.h"
+
 
 void testHora(){	
 	std::vector<Hora> horas = {{12,3,4}, {3,4,5}, {8,9,12}, {23,56,8}};
@@ -163,7 +167,11 @@ void testVector(){
 }
 
 int main(){
-	testHora();
+	std::srand(std::time(NULL));
+	
+	Matriz m;
+	m.imprimir();
+	
 	
 	return 0;
 }
