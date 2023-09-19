@@ -1,10 +1,30 @@
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <vector>
+
+#include "hora.h"
 
 #define MENOR(A,B) ((A<B)?A:B)
 
 template <class T> T menor(T a, T b){
 	return (a<b ? a : b);
+}
+
+template <class T> std::vector<T> menor(std::vector<T> a, std::vector<T> b){
+	// Especialización parcial.
+	return (a<b ? a : b);
+}
+
+template <class T> void imprimir(std::vector<T> v){
+	for (T a : v)
+		std::cout << a << " ";
+	std::cout << std::endl;
+}
+
+const char *menor(const char *ptr1, const char *ptr2){
+	std::cout << "Compara con punteros" << std::endl;
+	return (std::strcmp(ptr1, ptr2) < 0) ? ptr1 : ptr2;
 }
 
 
@@ -36,6 +56,17 @@ void testPlantillaMenor(){
 	const char *s1 = "Juan";
 	const char *s2 = "Cristina";
 	std::cout << "Menor const char *: " << menor(s1,s2) << std::endl;
+	
+	Hora h1(12,29,1);
+	Hora h2(12,30,0);
+	
+	std::cout << "Menor Hora: " << menor(h2, h1) << std::endl;
+	
+	std::vector<int> v1 = {1,2,3,4,5};
+	std::vector<int> v2 = {1,2,3,4,6};
+	
+	std::vector<int> resul = menor(v1, v2);
+	imprimir(resul);
 }
 
 int main(){
