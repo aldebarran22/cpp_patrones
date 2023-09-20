@@ -4,6 +4,8 @@
 
 
 #include "FactorySamsung.h"
+#include "S20.h"
+#include "GalaxyA.h"
 
 /**
  * FactorySamsung implementation
@@ -14,12 +16,12 @@
  * @return SmartPhone *
  */
 SmartPhone * FactorySamsung::createSmartPhone() {
-    return null;
+    return new S20();
 }
 
 /**
  * @return Tablet *
  */
 Tablet * FactorySamsung::createTablet() {
-    return null;
+    return new GalaxyA();
 }

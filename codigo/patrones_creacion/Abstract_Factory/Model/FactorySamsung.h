@@ -12,8 +12,7 @@
 class FactorySamsung: public AbstractFactory {
 public: 
     
-SmartPhone * createSmartPhone();
-    
+SmartPhone * createSmartPhone();    
 Tablet * createTablet();
 };
 

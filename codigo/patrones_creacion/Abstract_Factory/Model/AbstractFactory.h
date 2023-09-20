@@ -6,6 +6,9 @@
 #ifndef _ABSTRACTFACTORY_H
 #define _ABSTRACTFACTORY_H
 
+#include "SmartPhone.h"
+#include "Tablet.h"
+
 class AbstractFactory {
 public: 
     
