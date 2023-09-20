@@ -1,7 +1,7 @@
 #include "Circulo.h"
 
 Figura * Circulo::clone() {
-
+	return new Circulo(*this);
 }
 
 void Circulo::draw() {

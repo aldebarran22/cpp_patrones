@@ -6,7 +6,7 @@
 #include "Triangulo.h"
 
 Figura * Triangulo::clone() {
-
+	return new Triangulo(*this);  // Triangulo(const Triangulo &)   // triangulo *
 }
 
 void Triangulo::draw() {

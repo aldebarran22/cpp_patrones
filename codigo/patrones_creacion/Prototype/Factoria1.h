@@ -14,6 +14,7 @@ class Factoria1
 	public:
 		Factoria1();
 		Figura *getPrototipo(TipoProto);
+		void print();
 		~Factoria1();
 	protected:
 };
