@@ -4,9 +4,12 @@
 #include <stdexcept>
 #include <cstdlib>
 #include <ctime>
+#include <map>
 
+#include "Date.h"
 #include "hora.h"
 #include "Matriz.h"
+#include "Agenda.h"
 
 
 void testHora(){	
@@ -166,7 +169,7 @@ void testVector(){
 	
 }
 
-int main(){
+void testMatriz(){
 	std::srand(std::time(NULL));
 	
 	Matriz m;
@@ -179,8 +182,29 @@ int main(){
 
 	std::cout << std::endl;	
 	Matriz m3("numeros2.csv");
-	m3.imprimir();
+	m3.imprimir();	
+}
+
+void testMapas(){
+	std::map<int, char> mapa1 = {{1,'a'}, {2, 'b'}, {3, 'c'}};
+	std::map<int, char>::iterator it;
 	
+	mapa1[4] = 'd';
+	mapa1[1] = 'A';
 	
+	for (it = mapa1.begin() ; it != mapa1.end() ; it++){
+		std::cout << it->first << " : " << it->second << std::endl;
+	}
+}
+
+void testAgenda(){
+	Agenda agenda;
+	
+	agenda.addCita(Date(20, 9, 2023), Hora(9,0,0), "Clase C++");
+}
+
+int main(){
+
+	testAgenda();
 	return 0;
 }
