@@ -17,6 +17,7 @@ class Matriz
 		Matriz(int=5, int=5);
 		Matriz(std::string);
 		void imprimir();
+		void to_csv(std::string);
 		~Matriz();
 	protected:
 };

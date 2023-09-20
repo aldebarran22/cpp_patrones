@@ -33,11 +33,27 @@ Matriz::Matriz(std::string path){
 	os.close();	
 }
 
+void Matriz::to_csv(std::string path){
+	std::string linea;
+	std::ofstream ofs;
+	
+	ofs.open(path, std::ios::out);
+	for (auto fila : this->matriz){
+		linea = "";
+		this->join(fila, ';', linea);
+		ofs << linea << std::endl;
+	}
+	ofs.close();
+}
+
 void Matriz::join(const std::vector<int> &fila, char delim, std::string &linea){
 		
 	for (auto numero : fila){
 		linea += std::to_string(numero) + delim;
-	}	
+	}
+	
+	// Quitar el último ;
+	linea = linea.substr(0,linea.length()-1);
 	
 }
 
