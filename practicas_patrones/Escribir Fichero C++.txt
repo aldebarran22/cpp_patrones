@@ -1,0 +1,9 @@
+int main(){
+ofstream ofs;
+// Abrir el fichero de texto para escribir
+ofs.open(“fichero.txt”, ios::out);
+ofs << “Hola mundo\n”;
+ofs << 9 << “ * “ << 256 << “ = “ << 9*256 << “\n”;
+ofs.close();
+return 0;
+}
