@@ -2,7 +2,7 @@
  * Project Untitled
  */
 
-
+#include <iostream>
 #include "GalaxyA.h"
 
 /**
@@ -14,5 +14,5 @@
  * @return void
  */
 void GalaxyA::internet() {
-    return;
+    std::cout << "Internet con GalaxyA " << std::endl;
 }

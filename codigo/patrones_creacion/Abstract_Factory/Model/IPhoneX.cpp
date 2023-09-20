@@ -2,7 +2,7 @@
  * Project Untitled
  */
 
-
+#include <iostream>
 #include "IPhoneX.h"
 
 /**
@@ -14,5 +14,5 @@
  * @return void
  */
 void IPhoneX::call() {
-    return;
+    std::cout << "Call con IPhoneX " << std::endl;
 }

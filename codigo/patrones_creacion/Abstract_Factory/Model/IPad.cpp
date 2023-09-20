@@ -2,7 +2,7 @@
  * Project Untitled
  */
 
-
+#include <iostream>
 #include "IPad.h"
 
 /**
@@ -14,5 +14,5 @@
  * @return void
  */
 void IPad::internet() {
-    return;
+    std::cout << "Internet con IPad " << std::endl;
 }

@@ -2,7 +2,7 @@
  * Project Untitled
  */
 
-
+#include <iostream>
 #include "S20.h"
 
 /**
@@ -14,5 +14,5 @@
  * @return void
  */
 void S20::call() {
-    return;
+    std::cout << "Call con S20 " << std::endl;
 }
