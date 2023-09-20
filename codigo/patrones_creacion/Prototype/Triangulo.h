@@ -15,6 +15,10 @@ public:
     
 	Figura * clone(); 
 	void draw();
+	
+	int getBase(){ return this->base; }
+	int getAltura(){ return this->altura; }
+	
 	Triangulo(int b, int h, std::string c="black");
 	~Triangulo();
 	
