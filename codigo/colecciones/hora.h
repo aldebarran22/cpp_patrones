@@ -11,6 +11,7 @@ class Hora
 	friend ostream & operator<<(ostream &, const Hora &);
 	friend istream & operator>>(istream &, Hora &);
 	friend bool operator==(const Hora &, const Hora &);
+	friend bool operator<(const Hora &, const Hora &);
 	
 	private:
 		int h,m,s;
@@ -22,8 +23,7 @@ class Hora
 		Hora(int =0,int =0, int=0);
 		long segundos() const;
 		Hora operator+(const Hora &);
-		bool operator>(const Hora &);
-		bool operator<(const Hora &);
+		bool operator>(const Hora &);		
 		bool operator>=(const Hora &);		
 		bool operator!();
 		Hora operator++(); 	  // Prefijo

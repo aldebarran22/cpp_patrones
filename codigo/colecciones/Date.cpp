@@ -10,6 +10,9 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cstdio>
+#include <string>
+
 using namespace std;
 
 Date::Date(){
@@ -26,6 +29,17 @@ Date::Date(int d, int m, int a) {
 long Date::getDias() const
 {
 	return this->aa*365 + this->dd + (this->mm-1) * 30;
+}
+
+int Date::toNumber() const {
+	char s[50];
+	
+	sprintf(s, "%d%02d%02d", this->aa, this->mm, this->dd);
+	return stoi(string(s));
+}
+	
+bool operator<(const Date &d1, const Date &d2){
+	return d1.toNumber() < d2.toNumber();
 }
 
 ostream & operator<<(ostream &os, const Date &d)
