@@ -201,6 +201,16 @@ void testAgenda(){
 	Agenda agenda;
 	
 	agenda.addCita(Date(20, 9, 2023), Hora(9,0,0), "Clase C++");
+	agenda.addCita(Date(21, 9, 2023), Hora(9,0,0), "Clase C++");
+	agenda.addCita(Date(22, 9, 2023), Hora(9,0,0), "Clase C++");
+	agenda.addCita(Date(23, 9, 2023), Hora(9,0,0), "Clase C++");
+	
+	agenda.addCita(Date(20, 9, 2023), Hora(19,0,0), "Python");
+	agenda.addCita(Date(20, 9, 2023), Hora(9,0,0), "Vue.js");
+	
+	agenda.print(Date(20, 9, 2023), Hora(19,0,0));
+	
+	agenda.print();
 }
 
 int main(){
