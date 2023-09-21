@@ -1,0 +1,4 @@
+EXPORTS
+    HelloWorld @1
+    printArray @2
+    sumar @3
