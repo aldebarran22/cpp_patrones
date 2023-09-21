@@ -54,7 +54,69 @@ template <class T> class EstrategiaBurbuja : public Estrategia<T> {
 	}
 };
 
+template <class T> class Contexto {
+
+	Estrategia<T> *algoritmo;
+	
+	public:
+		Contexto();
+		Contexto(Estrategia<T> *);
+		void setEstrategia(Estrategia<T> *);
+		void ordenar(T *, int);
+		void imprimir(T *, int);
+		~Contexto();
+};
+
+// CPP del Contexto
+template <class T> Contexto<T>::Contexto(){
+	this->algoritmo = nullptr;
+}
+
+template <class T> Contexto<T>::Contexto(Estrategia<T> *estrategia){
+	this->algoritmo = estrategia;
+}
+
+template <class T> void Contexto<T>::setEstrategia(Estrategia<T> *estrategia){
+	this->algoritmo = estrategia;
+}
+
+template <class T> void Contexto<T>::ordenar(T *array, int size){
+	if (this->algoritmo == nullptr){
+		
+		// Seleccionar un algoritmo en función del tamaño del array:
+		if (size < 10){
+			// Ordenar por la burbuja:
+			this->algoritmo = new EstrategiaBurbuja<T>();	
+			
+		} else {
+			this->algoritmo = new EstrategiaInsDirecta<T>();
+			
+		}
+	} 
+	
+	this->algoritmo->Sort(array, size);
+}
+
+template <class T> void Contexto<T>::imprimir(T *array, int size){
+	
+	for (int i = 0 ; i < size ; i++){
+		std::cout << array[i] << " ";
+	}
+	std::cout << std::endl;
+}
+
+template <class T> Contexto<T>::~Contexto(){
+	
+	if (this->algoritmo != nullptr){
+		delete this->algoritmo;
+		this->algoritmo = nullptr;
+	}
+}
+
+
 int main(){
+	Contexto<int> c;
+	Contexto<std::string> c2;
 	return 0;
 }
 
