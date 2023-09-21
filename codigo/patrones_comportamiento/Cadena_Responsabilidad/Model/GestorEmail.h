@@ -16,7 +16,9 @@ public:
 /**
  * @param peticion
  */
+GestorEmail(Gestor *g):Gestor(g){}
 void trasmitir(Peticion peticion);
+~GestorEmail(){}
 };
 
 #endif //_GESTOREMAIL_H

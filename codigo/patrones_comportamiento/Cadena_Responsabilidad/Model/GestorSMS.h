@@ -16,7 +16,10 @@ public:
 /**
  * @param peticion
  */
+GestorSMS(Gestor *g):Gestor(g){}
 void trasmitir(Peticion peticion);
+~GestorSMS(){}
+
 };
 
 #endif //_GESTORSMS_H

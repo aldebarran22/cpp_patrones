@@ -16,7 +16,9 @@ public:
 /**
  * @param peticion
  */
+GestorWhatsApp(Gestor *g):Gestor(g){}
 void trasmitir(Peticion peticion);
+~GestorWhatsApp(){}
 };
 
 #endif //_GESTORWHATSAPP_H

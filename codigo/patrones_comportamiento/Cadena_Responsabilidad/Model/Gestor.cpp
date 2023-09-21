@@ -18,6 +18,5 @@ Gestor::Gestor(Gestor * gestor) {
 }
 
 Gestor::~Gestor(){
-	delete this->sucesor;
-	this->sucesor = nullptr;
+
 }
