@@ -44,7 +44,7 @@ void Factoria2::print(){
 			it->second->draw();
 			
 		} else {
-			std::cout << "Prototipo: " << it->first << " no se ha creado" << std::endl;
+			std::cout << "Prototipo: " << toString(it->first) << " no se ha creado" << std::endl;
 		}
 	}
 }
