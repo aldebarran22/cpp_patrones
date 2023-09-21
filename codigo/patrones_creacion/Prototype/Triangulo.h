@@ -19,7 +19,7 @@ public:
 	int getBase(){ return this->base; }
 	int getAltura(){ return this->altura; }
 	
-	Triangulo(int b, int h, std::string c="black");
+	Triangulo(int b=5, int h=10, std::string c="black");
 	~Triangulo();
 	
 private: 

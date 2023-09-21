@@ -16,7 +16,7 @@ public:
 	Figura * clone();
 	void draw();
 	inline void setRadio(int radio){ this->radio=radio;}
-	Circulo(int r, std::string c="black");
+	Circulo(int r=5, std::string c="black");
 	~Circulo();
 private: 
     int radio;
