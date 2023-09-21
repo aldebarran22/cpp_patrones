@@ -3,8 +3,8 @@
 
 #include <map>
 #include "Figura.h"
+#include "tipos.h"
 
-typedef enum { TRIANGULO, CIRCULO} TipoProto;
 
 // Esta versión crea todos los prototipos al principio y cuando piden un prototipo lo clona.
 class Factoria1

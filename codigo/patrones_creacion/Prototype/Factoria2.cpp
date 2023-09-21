@@ -1,12 +1,16 @@
 #include <stdexcept>
+#include <iostream>
 
 #include "Factoria2.h"
+#include "Triangulo.h"
+#include "Circulo.h"
 
 Factoria2::Factoria2()
 {
 	// Inicializar claves del mapa, pero sin instanciar el objeto:
-	for (TipoProto i = TRIANGULO ; i <= CIRCULO ; i++){
-		this->prototipos[i] = nullptr;
+	for (int i = TRIANGULO ; i <= CIRCULO ; i++){
+		TipoProto t = static_cast<TipoProto>(i);
+		this->prototipos[t] = nullptr;
 	}
 }
 

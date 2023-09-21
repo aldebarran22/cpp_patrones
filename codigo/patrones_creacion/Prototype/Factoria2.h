@@ -1,6 +1,11 @@
 #ifndef FACTORIA2_H
 #define FACTORIA2_H
 
+#include <map>
+#include "tipos.h"
+#include "figura.h"
+
+
 class Factoria2
 {
 	std::map<TipoProto, Figura *> prototipos;
