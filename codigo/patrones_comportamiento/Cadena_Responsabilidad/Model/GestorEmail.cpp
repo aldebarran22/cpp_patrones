@@ -13,6 +13,6 @@
 /**
  * @param peticion
  */
-void GestorEmail::void trasmitir(Peticion peticion) {
+void GestorEmail::trasmitir(Peticion peticion) {
 
 }

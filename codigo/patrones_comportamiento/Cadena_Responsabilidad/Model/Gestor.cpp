@@ -13,13 +13,11 @@
 /**
  * @param gestor
  */
-void Gestor::Gestor(Gestor * gestor) {
-
+Gestor::Gestor(Gestor * gestor) {
+	this->sucesor = gestor;
 }
 
-/**
- * @param peticion
- */
-virtual void Gestor::void trasmitir(Peticion peticion) {
-
+Gestor::~Gestor(){
+	delete this->sucesor;
+	this->sucesor = nullptr;
 }

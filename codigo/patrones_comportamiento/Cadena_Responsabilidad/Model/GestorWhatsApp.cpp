@@ -13,6 +13,6 @@
 /**
  * @param peticion
  */
-void GestorWhatsApp::void trasmitir(Peticion peticion) {
+void GestorWhatsApp::trasmitir(Peticion peticion) {
 
 }

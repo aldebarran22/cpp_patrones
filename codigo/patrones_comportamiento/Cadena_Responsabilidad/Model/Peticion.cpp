@@ -14,10 +14,11 @@
  * @param tipo
  * @param mensaje
  */
-void Peticion::Peticion(int tipo, string mensaje) {
-
+Peticion::Peticion(TMensaje tipo, std::string mensaje) {
+	this->tipo = tipo;
+	this->mensaje = mensaje;
 }
 
-void Peticion::Peticion() {
+Peticion::~Peticion() {
 
 }

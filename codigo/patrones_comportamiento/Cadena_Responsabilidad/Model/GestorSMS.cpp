@@ -13,6 +13,6 @@
 /**
  * @param peticion
  */
-void GestorSMS::void trasmitir(Peticion peticion) {
+void GestorSMS::trasmitir(Peticion peticion) {
 
 }
