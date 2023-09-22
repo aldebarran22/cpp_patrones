@@ -5,14 +5,11 @@
 
 #include "BordeDecorator.h"
 
-/**
- * BordeDecorator implementation
- */
+BordeDecorator::BordeDecorator(IVentana *):VentanaDecorator(ventana){}
 
 
-/**
- * @return void
- */
-void BordeDecorator::dibujar() {
-    return;
+void BordeDecorator::dibujar(){
+	
 }
+
+BordeDecorator::~BordeDecorator(){}

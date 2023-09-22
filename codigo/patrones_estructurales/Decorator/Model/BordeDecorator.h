@@ -12,7 +12,9 @@
 class BordeDecorator: public VentanaDecorator {
 public: 
     
+BordeDecorator(IVentana *);
 void dibujar();
+~BordeDecorator();
 };
 
 #endif //_BORDEDECORATOR_H

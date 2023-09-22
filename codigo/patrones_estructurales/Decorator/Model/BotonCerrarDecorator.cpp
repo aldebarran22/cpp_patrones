@@ -5,14 +5,12 @@
 
 #include "BotonCerrarDecorator.h"
 
-/**
- * BotonCerrarDecorator implementation
- */
+
+BotonCerrarDecorator::BotonCerrarDecorator(IVentana *ventana):VentanaDecorator(ventana){}
 
 
-/**
- * @return void
- */
-void BotonCerrarDecorator::dibujar() {
-    return;
+void BotonCerrarDecorator::dibujar(){
+	
 }
+
+BotonCerrarDecorator::~BotonCerrarDecorator(){}

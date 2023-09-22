@@ -5,14 +5,11 @@
 
 #include "BotonAyudaDecorator.h"
 
-/**
- * BotonAyudaDecorator implementation
- */
+BotonAyudaDecorator::BotonAyudaDecorator(IVentana *ventana):VentanaDecorator(ventana){}
 
-
-/**
- * @return void
- */
-void BotonAyudaDecorator::dibujar() {
-    return;
+void BotonAyudaDecorator::dibujar(){
+	
 }
+
+BotonAyudaDecorator::~BotonAyudaDecorator(){}
+

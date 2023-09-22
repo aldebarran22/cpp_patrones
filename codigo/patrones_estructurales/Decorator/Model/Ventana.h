@@ -6,6 +6,8 @@
 #ifndef _VENTANA_H
 #define _VENTANA_H
 
+#include <string>
+
 #include "IVentana.h"
 
 
@@ -15,11 +17,13 @@ public:
 /**
  * @param titulo
  */
-void Ventana(string titulo);
-    
+Ventana(std::string titulo="titulo");
 void dibujar();
+~Ventana();
+
+
 protected: 
-    string titulo;
+    std::string titulo;
 };
 
 #endif //_VENTANA_H

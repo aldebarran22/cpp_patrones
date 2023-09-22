@@ -2,7 +2,7 @@
  * Project Untitled
  */
 
-
+#include <iostream>
 #include "Ventana.h"
 
 /**
@@ -13,13 +13,15 @@
 /**
  * @param titulo
  */
-void Ventana::Ventana(string titulo) {
-
+Ventana::Ventana(std::string titulo) {
+	this->titulo = titulo;
 }
 
 /**
  * @return void
  */
 void Ventana::dibujar() {
-    return;
+    std::cout << this->titulo;
 }
+
+Ventana::~Ventana(){}

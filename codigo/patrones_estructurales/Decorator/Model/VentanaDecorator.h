@@ -10,8 +10,12 @@
 
 
 class VentanaDecorator: public IVentana {
+public:
+	VentanaDecorator(IVentana *ventana);	
+	~VentanaDecorator();
+	
 protected: 
-    IVentana ventana;
+    IVentana *ventana;
 };
 
 #endif //_VENTANADECORATOR_H

@@ -12,7 +12,9 @@
 class BotonAyudaDecorator: public VentanaDecorator {
 public: 
     
+BotonAyudaDecorator(IVentana *);
 void dibujar();
+~BotonAyudaDecorator();
 };
 
 #endif //_BOTONAYUDADECORATOR_H
