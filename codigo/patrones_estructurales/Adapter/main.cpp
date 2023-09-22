@@ -6,7 +6,7 @@
 int main(int argc, char** argv) {
 	VectorPlano vp(12,6);
 	
-	vp.getZ();
+
 	
 	return 0;
 }
