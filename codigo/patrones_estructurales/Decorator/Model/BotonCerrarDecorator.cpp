@@ -2,6 +2,7 @@
  * Project Untitled
  */
 
+#include <iostream>
 
 #include "BotonCerrarDecorator.h"
 
@@ -10,7 +11,8 @@ BotonCerrarDecorator::BotonCerrarDecorator(IVentana *ventana):VentanaDecorator(v
 
 
 void BotonCerrarDecorator::dibujar(){
-	
+	this->ventana->dibujar();
+	std::cout << " [X]";
 }
 
 BotonCerrarDecorator::~BotonCerrarDecorator(){}
