@@ -12,7 +12,7 @@
 
 
 int main(int argc, char** argv) {
-	IVentana *v1 = new Ventana("Titulo de la ventana");
+	Ventana *v1 = new Ventana("Titulo de la ventana");
 	v1->dibujar();
 	std::cout << std::endl;
 	
@@ -28,6 +28,9 @@ int main(int argc, char** argv) {
 	IVentana *v4 = new BordeDecorator(v3);
 	v4->dibujar();
 	std::cout << std::endl;
+	
+	IVentana *v5 = new BordeDecorator(new BotonAyudaDecorator(new BotonCerrarDecorator(new Ventana("titulo"))));
+	v5->dibujar();
 	
 	
 	delete v1;
