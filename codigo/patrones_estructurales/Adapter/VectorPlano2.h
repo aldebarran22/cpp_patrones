@@ -9,7 +9,7 @@ class VectorPlano2 : public Vector2D
 	Vector3D v3;
 	
 	public:
-		VectorPlano2();
+		VectorPlano2(int=0, int=0);
 		double getAbcisa() const; 
 	 	double getOrdenada()const; 
 	 	double prod(const Vector2D &); 
