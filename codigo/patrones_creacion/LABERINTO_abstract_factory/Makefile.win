@@ -1,0 +1,64 @@
+# Project: laberinto_af
+# Makefile created by Dev-C++ 5.5.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Cliente.o FabricaLaberintos.o FabricaLaberintosConBombas.o FabricaLaberintosEncantados.o Habitacion.o HabitacionConBombas.o HabitacionEncantada.o Juego.o Laberinto.o Pared.o ParedExplosionada.o Puerta.o PuertaConHechizo.o
+LINKOBJ  = Cliente.o FabricaLaberintos.o FabricaLaberintosConBombas.o FabricaLaberintosEncantados.o Habitacion.o HabitacionConBombas.o HabitacionEncantada.o Juego.o Laberinto.o Pared.o ParedExplosionada.o Puerta.o PuertaConHechizo.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.7.1/include/c++"
+BIN      = laberinto_af.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Cliente.o: Cliente.cpp
+	$(CPP) -c Cliente.cpp -o Cliente.o $(CXXFLAGS)
+
+FabricaLaberintos.o: FabricaLaberintos.cpp
+	$(CPP) -c FabricaLaberintos.cpp -o FabricaLaberintos.o $(CXXFLAGS)
+
+FabricaLaberintosConBombas.o: FabricaLaberintosConBombas.cpp
+	$(CPP) -c FabricaLaberintosConBombas.cpp -o FabricaLaberintosConBombas.o $(CXXFLAGS)
+
+FabricaLaberintosEncantados.o: FabricaLaberintosEncantados.cpp
+	$(CPP) -c FabricaLaberintosEncantados.cpp -o FabricaLaberintosEncantados.o $(CXXFLAGS)
+
+Habitacion.o: Habitacion.cpp
+	$(CPP) -c Habitacion.cpp -o Habitacion.o $(CXXFLAGS)
+
+HabitacionConBombas.o: HabitacionConBombas.cpp
+	$(CPP) -c HabitacionConBombas.cpp -o HabitacionConBombas.o $(CXXFLAGS)
+
+HabitacionEncantada.o: HabitacionEncantada.cpp
+	$(CPP) -c HabitacionEncantada.cpp -o HabitacionEncantada.o $(CXXFLAGS)
+
+Juego.o: Juego.cpp
+	$(CPP) -c Juego.cpp -o Juego.o $(CXXFLAGS)
+
+Laberinto.o: Laberinto.cpp
+	$(CPP) -c Laberinto.cpp -o Laberinto.o $(CXXFLAGS)
+
+Pared.o: Pared.cpp
+	$(CPP) -c Pared.cpp -o Pared.o $(CXXFLAGS)
+
+ParedExplosionada.o: ParedExplosionada.cpp
+	$(CPP) -c ParedExplosionada.cpp -o ParedExplosionada.o $(CXXFLAGS)
+
+Puerta.o: Puerta.cpp
+	$(CPP) -c Puerta.cpp -o Puerta.o $(CXXFLAGS)
+
+PuertaConHechizo.o: PuertaConHechizo.cpp
+	$(CPP) -c PuertaConHechizo.cpp -o PuertaConHechizo.o $(CXXFLAGS)
